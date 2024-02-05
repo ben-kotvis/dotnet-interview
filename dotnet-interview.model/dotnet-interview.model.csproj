@@ -1,12 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <ProjectReference Include="..\dotnet-interview.model\dotnet-interview.model.csproj" />
-  </ItemGroup>
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>dotnet_interview</RootNamespace>
+    <RootNamespace>dotnet_interview.model</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
