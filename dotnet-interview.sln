@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet-interview.test", "dotnet-interview.test\dotnet-interview.test.csproj", "{800397EE-2C02-490A-B7B3-5178FE8D89C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet-interview", "dotnet-interview\dotnet-interview.csproj", "{9B2FF3BE-A30F-47C8-AF35-806DF07EF9B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{800397EE-2C02-490A-B7B3-5178FE8D89C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{800397EE-2C02-490A-B7B3-5178FE8D89C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{800397EE-2C02-490A-B7B3-5178FE8D89C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{800397EE-2C02-490A-B7B3-5178FE8D89C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B2FF3BE-A30F-47C8-AF35-806DF07EF9B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B2FF3BE-A30F-47C8-AF35-806DF07EF9B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B2FF3BE-A30F-47C8-AF35-806DF07EF9B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B2FF3BE-A30F-47C8-AF35-806DF07EF9B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98CA335F-6D0C-430D-8492-1B205B90C7EF}
+	EndGlobalSection
+EndGlobal
