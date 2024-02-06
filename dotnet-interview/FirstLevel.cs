@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using dotnet_interview.model;
+using Dotnet.Interview.Model;
 
-namespace dotnet_interview;
+namespace Dotnet.Interview;
 
 public class FirstLevel
 {

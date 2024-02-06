@@ -1,11 +1,14 @@
-namespace dotnet_interview.test.TestSupport;
+namespace Dotnet.Interview.Test.TestSupport;
 
+/// <summary>
+/// Do not change anything in this file
+/// </summary>
 public static class SerializedPayloads
 {
     public const string CompanyFixtureOneTestThree = """
                                     { 
                                     "name": "ecointerview",
-                                        "stocksSymbol": "ECOW",
+                                        "stockSymbol": "ECOW",
                                         "contacts": [
                                             {
                                             "firstName": "John",

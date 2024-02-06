@@ -1,8 +1,9 @@
-using dotnet_interview;
-using dotnet_interview.model;
-using dotnet_interview.test.TestSupport;
+using Dotnet.Interview;
+using Dotnet.Interview.Model;
+using Dotnet.Interview.Model.Exceptions;
+using Dotnet.Interview.Test.TestSupport;
 
-namespace dotnet_interview.test;
+namespace Dotnet.Interview.test;
 
 
 /// <summary>
@@ -22,7 +23,7 @@ public class FirstLevelFixture
     public void TestTwo()
     {
         var exception = Record.Exception(() => FirstLevel.Divide(10, 0));
-        Assert.IsType<DivideByZeroException>(exception);
+        Assert.IsType<ValidationException>(exception);
     }
 
 
@@ -33,6 +34,6 @@ public class FirstLevelFixture
         var company = FirstLevel.ParseCompany(serializedCustomer);
 
         Assert.NotEqual(default(Company), company);
-        Assert.Equal("ECOW", company?.StockSymbol);
+        Assert.Equal("ECOW", company?.Symbol);
     }
 }

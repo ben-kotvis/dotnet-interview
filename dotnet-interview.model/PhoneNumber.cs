@@ -1,4 +1,4 @@
-﻿namespace dotnet_interview.model;
+﻿namespace Dotnet.Interview.Model;
 
 public class PhoneNumber
 {
