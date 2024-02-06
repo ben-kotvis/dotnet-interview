@@ -24,6 +24,13 @@
   </ItemGroup>
 
   <ItemGroup>
+      <None 
+         Include="assets\**" 
+         CopyToOutputDirectory="PreserveNewest" 
+         LinkBase="assets\" />
+    </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\dotnet-interview\dotnet-interview.csproj" />
   </ItemGroup>
 

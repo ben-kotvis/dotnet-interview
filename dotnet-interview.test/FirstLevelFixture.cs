@@ -1,4 +1,6 @@
 using dotnet_interview;
+using dotnet_interview.model;
+using dotnet_interview.test.TestSupport;
 
 namespace dotnet_interview.test;
 
@@ -17,9 +19,20 @@ public class FirstLevelFixture
     }
 
     [Fact]
-    public void Error()
-    {        
+    public void TestTwo()
+    {
         var exception = Record.Exception(() => FirstLevel.Divide(10, 0));
         Assert.IsType<DivideByZeroException>(exception);
+    }
+
+
+    [Fact]
+    public void TestThree()
+    {
+        string serializedCustomer = SerializedPayloads.CompanyFixtureOneTestThree;
+        var company = FirstLevel.ParseCompany(serializedCustomer);
+
+        Assert.NotEqual(default(Company), company);
+        Assert.Equal("ECOW", company?.StockSymbol);
     }
 }

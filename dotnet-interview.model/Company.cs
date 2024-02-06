@@ -2,8 +2,9 @@
 
 public class Company
 {
-    public string Name { get; set; }
-    public string StockSymbol { get; set; }
-    public PhoneNumber[] PhoneNumbers { get; set; }
+    public required string Name { get; init; }
+    public string? StockSymbol { get; init; }
+    public required Contact[] Contacts { get; init; }
+    public required Address Address { get; init; }
     
 }
