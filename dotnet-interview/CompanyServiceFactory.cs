@@ -21,13 +21,18 @@ public class CompanyServiceFactory
         }
                     
         companyService = new CanadianSimpleService(companyService);
-
+        // add decorators
         switch(company.Type)
         {
             case Constants.CompanyTypes.Simple:
                 default:
                     //this is the default so do nothing
                 break;
+        }
+
+        if(company.StockSymbol != default)
+        {
+            companyService = new PubliclyTradedService(companyService);
         }
         return companyService;
     }

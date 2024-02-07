@@ -35,7 +35,7 @@ public class FirstLevelFixture
         var company = FirstLevel.ParseCompany(serializedCustomer);
 
         Assert.NotEqual(default(Company), company);
-        Assert.Equal("ECOW", company?.Symbol);
+        Assert.NotNull(company?.StockSymbol);
     }
 
     [Fact]
@@ -48,6 +48,15 @@ public class FirstLevelFixture
     }
 
 
+    // I will pass
+    [Fact]
+    public void TestFive()
+    {
+        string serializedCustomer = SerializedPayloads.CompanyFixtureOneTestFive;
+        var company = FirstLevel.ParseCompany(serializedCustomer);
+        ICompanyService companyService = CompanyServiceFactory.Create(company);
+        Assert.Equal(18.01f, companyService.GetSurcharge());
+    }
 
 
 

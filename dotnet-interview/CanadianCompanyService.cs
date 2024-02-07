@@ -14,11 +14,11 @@ public class CanadianCompanyService : ICompanyService
 
     public string GetStockSymbol()
     {
-        if (_company.Symbol == default)
+        if (_company.StockSymbol == default)
         {
             throw new ValidationException();
         }
-        return _company.Symbol;
+        return _company.StockSymbol;
     }
 
     public float GetSurcharge()
