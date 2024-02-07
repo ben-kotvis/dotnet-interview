@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Dotnet.Interview;
 using Dotnet.Interview.Model;
 using Dotnet.Interview.Model.Exceptions;
@@ -36,4 +37,22 @@ public class FirstLevelFixture
         Assert.NotEqual(default(Company), company);
         Assert.Equal("ECOW", company?.Symbol);
     }
+
+    [Fact]
+    public void TestFour()
+    {
+        string serializedCustomer = SerializedPayloads.CompanyFixtureOneTestFour;
+        var company = FirstLevel.ParseCompany(serializedCustomer);
+        ICompanyService companyService = CompanyServiceFactory.Create(company);
+        Assert.Equal(33.01f, companyService.GetSurcharge());
+    }
+
+
+
+
+
+
+
+
+
 }

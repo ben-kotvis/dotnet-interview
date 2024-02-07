@@ -23,15 +23,10 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-      <None 
-         Include="assets\**" 
-         CopyToOutputDirectory="PreserveNewest" 
-         LinkBase="assets\" />
-    </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\dotnet-interview\dotnet-interview.csproj" />
+    <ProjectReference Include="..\dotnet-interview.model\dotnet-interview.model.csproj" />
   </ItemGroup>
 
 </Project>
