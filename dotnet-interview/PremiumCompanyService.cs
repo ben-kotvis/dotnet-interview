@@ -2,9 +2,9 @@ using Dotnet.Interview.Model;
 
 namespace Dotnet.Interview;
 
-public class CanadianSimpleService : CompanyAbstractDecorator, ICompanyService
+public class PremiumCompanyService : CompanyAbstractDecorator, ICompanyService
 {
-    public CanadianSimpleService(ICompanyService companyService)
+    public PremiumCompanyService(ICompanyService companyService)
         :base(companyService)
     {
         
@@ -17,7 +17,7 @@ public class CanadianSimpleService : CompanyAbstractDecorator, ICompanyService
 
     public int GetSurchargeInCents()
     {
-        return this._companyService.GetSurchargeInCents() + 1000;
+        return this._companyService.GetSurchargeInCents() + 1500;
     }
 
 }

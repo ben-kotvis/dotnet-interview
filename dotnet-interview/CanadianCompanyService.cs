@@ -21,8 +21,8 @@ public class CanadianCompanyService : ICompanyService
         return _company.StockSymbol;
     }
 
-    public float GetSurcharge()
+    public int GetSurchargeInCents()
     {
-        return 3.01f;
+        return 301;
     }
 }

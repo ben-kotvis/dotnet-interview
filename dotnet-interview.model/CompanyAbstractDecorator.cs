@@ -14,8 +14,8 @@ public abstract class CompanyAbstractDecorator : ICompanyService
         return _companyService.GetStockSymbol();
     }
 
-    public float GetSurcharge()
+    public int GetSurchargeInCents()
     {
-        return _companyService.GetSurcharge();
+        return _companyService.GetSurchargeInCents();
     }
 }

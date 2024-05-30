@@ -21,8 +21,8 @@ public class UnitedStatesCompanyService : ICompanyService
         return _company.StockSymbol;
     }
 
-    public float GetSurcharge()
+    public int GetSurchargeInCents()
     {
-        return 4.31f;
+        return 431;
     }
 }

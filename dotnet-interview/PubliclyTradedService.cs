@@ -15,9 +15,9 @@ public class PubliclyTradedService : CompanyAbstractDecorator, ICompanyService
         return this._companyService.GetStockSymbol();
     }
 
-    public float GetSurcharge()
+    public int GetSurchargeInCents()
     {
-        return this._companyService.GetSurcharge() + 5.00f;
+        return this._companyService.GetSurchargeInCents() + 500;
     }
 
 }

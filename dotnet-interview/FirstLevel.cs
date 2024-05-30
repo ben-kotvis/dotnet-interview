@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using Dotnet.Interview.Model;
 
@@ -8,6 +9,10 @@ public class FirstLevel
 {
     public static int Divide(int numerator, int denominator)
     {
+        if(denominator == 0)
+        {
+            throw new Dotnet.Interview.Model.Exceptions.ValidationException();
+        }
         return numerator / denominator;
     } 
 
@@ -17,6 +22,7 @@ public class FirstLevel
         var query = from s in new int[] {0,2,5,3,6}
                     where s > 5 
                     select sum += s;
+        query.ToList();
         return sum;
     } 
 

@@ -69,7 +69,7 @@ public static class SerializedPayloads
   public const string CompanyFixtureOneTestFive = """
                                     { 
                                         "name": "ecointerview",
-                                        "type": "Premium",
+                                        "type": "Commercial",
                                         "stockSymbol": "ECOW",
                                         "contacts": [
                                             {

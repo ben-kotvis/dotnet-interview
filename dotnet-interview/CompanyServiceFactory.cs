@@ -4,31 +4,23 @@ namespace Dotnet.Interview;
 
 public class CompanyServiceFactory
 {
+
     public static ICompanyService Create(Company company)
     {
         // Map to country first
-        ICompanyService? companyService = default;
-
-        switch(company.Address.CountryCode)
+        ICompanyService? companyService = company switch 
         {
-            case Constants.CountryCodes.Canada:
-                companyService = new CanadianCompanyService(company);
-                break;
-
-            default:
-                companyService = new CanadianCompanyService(company);
-                break;
-        }
+            { Address.CountryCode: Constants.CountryCodes.Canada } => new CanadianCompanyService(company),
+            _ => new CanadianCompanyService(company)
+        };
                     
         companyService = new CanadianSimpleService(companyService);
         // add decorators
-        switch(company.Type)
+        companyService = company switch
         {
-            case Constants.CompanyTypes.Simple:
-                default:
-                    //this is the default so do nothing
-                break;
-        }
+            { Type: Constants.CompanyTypes.Premium} => new PremiumCompanyService(companyService),
+            _ => companyService
+        };
 
         if(company.StockSymbol != default)
         {
