@@ -15,12 +15,6 @@ public class CompanyServiceFactory
         };
                     
         companyService = new CanadianSimpleService(companyService);
-        // add decorators
-        companyService = company switch
-        {
-            { Type: Constants.CompanyTypes.Premium} => new PremiumCompanyService(companyService),
-            _ => companyService
-        };
 
         if(company.StockSymbol != default)
         {
