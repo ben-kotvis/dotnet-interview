@@ -3,7 +3,7 @@ using Dotnet.Interview;
 using Dotnet.Interview.Model;
 using Dotnet.Interview.Model.Exceptions;
 using Dotnet.Interview.Test.TestSupport;
-
+using Moq;
 namespace Dotnet.Interview.test;
 
 
@@ -41,9 +41,10 @@ public class FirstLevelFixture
     [Fact]
     public async void TestFour()
     {
+        var apiServiceMock = new Mock<IApiService>();
         string serializedCustomer = SerializedPayloads.CompanyFixtureOneTestFour;
         var company = FirstLevel.ParseCompany(serializedCustomer);
-        ICompanyService companyService = CompanyServiceFactory.Create(company);
+        ICompanyService companyService = CompanyServiceFactory.Create(company, apiServiceMock.Object);
         Assert.Equal(3301, (await companyService.GetSurchargeInCents()));
     }
 
@@ -52,19 +53,21 @@ public class FirstLevelFixture
     [Fact]
     public async void TestFive()
     {
+        var apiServiceMock = new Mock<IApiService>();
         string serializedCustomer = SerializedPayloads.CompanyFixtureOneTestFive;
         var company = FirstLevel.ParseCompany(serializedCustomer);
-        ICompanyService companyService = CompanyServiceFactory.Create(company);
+        ICompanyService companyService = CompanyServiceFactory.Create(company, apiServiceMock.Object);
         Assert.Equal(1801, (await companyService.GetSurchargeInCents()));
     }
 
     // 
     [Fact]
     public async void TestSix()
-    {
+    {        
+        var apiServiceMock = new Mock<IApiService>();
         string serializedCustomer = SerializedPayloads.CompanyFixtureOneTestSix;
         var company = FirstLevel.ParseCompany(serializedCustomer);
-        ICompanyService companyService = CompanyServiceFactory.Create(company);
+        ICompanyService companyService = CompanyServiceFactory.Create(company, apiServiceMock.Object);
         Assert.Equal(1020, (await companyService.GetSurchargeInCents()));
     }
 

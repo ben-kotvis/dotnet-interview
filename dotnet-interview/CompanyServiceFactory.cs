@@ -6,7 +6,7 @@ namespace Dotnet.Interview;
 public class CompanyServiceFactory
 {
 
-    public static ICompanyService Create(Company company)
+    public static ICompanyService Create(Company company, IApiService apiService)
     {
         // Map to country first
         ICompanyService? companyService = company switch 
