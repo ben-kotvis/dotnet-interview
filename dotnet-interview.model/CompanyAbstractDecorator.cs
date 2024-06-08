@@ -1,20 +1,15 @@
 
 namespace Dotnet.Interview.Model;
 
-public abstract class CompanyAbstractDecorator : ICompanyService
+public abstract class CompanyAbstractDecorator(ICompanyService companyService) : ICompanyService
 {
-    protected ICompanyService _companyService { get; init; }
-    public CompanyAbstractDecorator(ICompanyService companyService)
-    {
-        this._companyService = companyService;
-    }
-
-    public string GetStockSymbol()
+    protected ICompanyService _companyService { get; init; } = companyService;
+    public virtual string GetStockSymbol()
     {
         return _companyService.GetStockSymbol();
     }
 
-    public int GetSurchargeInCents()
+    public virtual Task<int> GetSurchargeInCents()
     {
         return _companyService.GetSurchargeInCents();
     }

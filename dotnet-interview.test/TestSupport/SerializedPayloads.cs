@@ -69,7 +69,7 @@ public static class SerializedPayloads
   public const string CompanyFixtureOneTestFive = """
                                     { 
                                         "name": "ecointerview",
-                                        "type": "Commercial",
+                                        "type": "Simple",
                                         "stockSymbol": "ECOW",
                                         "contacts": [
                                             {
@@ -96,5 +96,36 @@ public static class SerializedPayloads
                                             "countryCode": "CA"
                                         }
                                     }
-                                    """;                                    
+                                    """;     
+
+  public const string CompanyFixtureOneTestSix = """
+                                    { 
+                                        "name": "Test Six Company",
+                                        "type": "Simple",
+                                        "contacts": [
+                                            {
+                                            "firstName": "John",
+                                            "lastName": "Smith",
+                                            "age": 25,
+                                            "phoneNumbers": [
+                                                {
+                                                "type": "home",
+                                                "number": "213 525-1234"
+                                                },
+                                                {
+                                                "type": "fax",
+                                                "number": "646 525-4367"
+                                                }
+                                            ]
+                                            }
+                                        ],
+                                        "address": {
+                                            "streetAddress": "21 2nd Street",
+                                            "city": "New York",
+                                            "state": "NY",
+                                            "postalCode": "10021", 
+                                            "countryCode": "US"
+                                        }
+                                    }
+                                    """;                                  
 }

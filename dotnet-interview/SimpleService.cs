@@ -2,9 +2,8 @@ using Dotnet.Interview.Model;
 
 namespace Dotnet.Interview;
 
-public class PremiumCompanyService(ICompanyService companyService) : CompanyAbstractDecorator(companyService), ICompanyService
+public class SimpleService(ICompanyService companyService) : CompanyAbstractDecorator(companyService), ICompanyService
 {
-
     public override string GetStockSymbol()
     {
         return this._companyService.GetStockSymbol();
@@ -12,7 +11,7 @@ public class PremiumCompanyService(ICompanyService companyService) : CompanyAbst
 
     public override async Task<int> GetSurchargeInCents()
     {
-        return (await this._companyService.GetSurchargeInCents()) + 1500;
+        return (await this._companyService.GetSurchargeInCents()) + 1000;
     }
 
 }

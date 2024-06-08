@@ -3,26 +3,22 @@ using Dotnet.Interview.Model;
 
 namespace Dotnet.Interview;
 
-public class UnitedStatesCompanyService : ICompanyService
+public class UnitedStatesCompanyService(Company company) : ICompanyService
 {
-    private Company _company { get; init; }
-
-    public UnitedStatesCompanyService(Company company)
-    {
-        this._company = company;
-    }
+    private Company Company { get; init; } = company;
+    private IApiService ApiService { get; init; } = new UnitedStatesApiService();
 
     public string GetStockSymbol()
     {
-        if (_company.StockSymbol == default)
+        if (Company.StockSymbol == default)
         {
             throw new ValidationException();
         }
-        return _company.StockSymbol;
+        return Company.StockSymbol;
     }
 
-    public int GetSurchargeInCents()
+    public async Task<int> GetSurchargeInCents()
     {
-        return 431;
+        return await ApiService.GetSurcharge();
     }
 }

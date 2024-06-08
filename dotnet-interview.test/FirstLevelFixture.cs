@@ -39,27 +39,34 @@ public class FirstLevelFixture
     }
 
     [Fact]
-    public void TestFour()
+    public async void TestFour()
     {
         string serializedCustomer = SerializedPayloads.CompanyFixtureOneTestFour;
         var company = FirstLevel.ParseCompany(serializedCustomer);
         ICompanyService companyService = CompanyServiceFactory.Create(company);
-        Assert.Equal(3301f, companyService.GetSurchargeInCents());
+        Assert.Equal(3301, (await companyService.GetSurchargeInCents()));
     }
 
 
     // I will pass
     [Fact]
-    public void TestFive()
+    public async void TestFive()
     {
         string serializedCustomer = SerializedPayloads.CompanyFixtureOneTestFive;
         var company = FirstLevel.ParseCompany(serializedCustomer);
         ICompanyService companyService = CompanyServiceFactory.Create(company);
-        Assert.Equal(1801, companyService.GetSurchargeInCents());
+        Assert.Equal(1801, (await companyService.GetSurchargeInCents()));
     }
 
-
-
+    // 
+    [Fact]
+    public async void TestSix()
+    {
+        string serializedCustomer = SerializedPayloads.CompanyFixtureOneTestSix;
+        var company = FirstLevel.ParseCompany(serializedCustomer);
+        ICompanyService companyService = CompanyServiceFactory.Create(company);
+        Assert.Equal(1020, (await companyService.GetSurchargeInCents()));
+    }
 
 
 

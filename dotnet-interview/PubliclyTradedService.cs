@@ -2,22 +2,17 @@ using Dotnet.Interview.Model;
 
 namespace Dotnet.Interview;
 
-public class PubliclyTradedService : CompanyAbstractDecorator, ICompanyService
+public class PubliclyTradedService(ICompanyService companyService) : CompanyAbstractDecorator(companyService), ICompanyService
 {
-    public PubliclyTradedService(ICompanyService companyService)
-        :base(companyService)
-    {
-        
-    }
 
-    public string GetStockSymbol()
+    public override string GetStockSymbol()
     {
         return this._companyService.GetStockSymbol();
     }
 
-    public int GetSurchargeInCents()
+    public override async Task<int> GetSurchargeInCents()
     {
-        return this._companyService.GetSurchargeInCents() + 500;
+        return (await this._companyService.GetSurchargeInCents()) + 500;
     }
 
 }
