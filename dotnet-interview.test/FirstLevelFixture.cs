@@ -60,18 +60,28 @@ public class FirstLevelFixture
         Assert.Equal(1801, (await companyService.GetSurchargeInCents()));
     }
 
-    // 
+    /* 
+    This test uses an actual API call.  Please change the solution code so that 
+    it uses a mock instead.
+    */
     [Fact]
     public async void TestSix()
-    {        
+    {           
         var apiServiceMock = new Mock<IApiService>();
         string serializedCustomer = SerializedPayloads.CompanyFixtureOneTestSix;
         var company = FirstLevel.ParseCompany(serializedCustomer);
         ICompanyService companyService = CompanyServiceFactory.Create(company, apiServiceMock.Object);
-        Assert.Equal(1020, (await companyService.GetSurchargeInCents()));
+        Assert.Equal(1021, (await companyService.GetSurchargeInCents()));
     }
 
-
+    [Fact]
+    public async void TestSeven()
+    {
+        string serializedCustomer = SerializedPayloads.CompanyFixtureOneTestSeven;
+        var company = FirstLevel.ParseCompany(serializedCustomer);
+        Assert.NotNull(company.DateFound);
+        Assert.Equal(new DateTimeOffset(new DateTime(1996, 3, 21)), company.DateFound.Value);
+    }
 
 
 }

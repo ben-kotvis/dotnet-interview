@@ -7,5 +7,5 @@ public class Company
     public required string Type { get; init; }
     public required Contact[] Contacts { get; init; }
     public required Address Address { get; init; }
-    
+    public DateTimeOffset? DateFound { get; init; }
 }

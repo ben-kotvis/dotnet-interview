@@ -127,5 +127,36 @@ public static class SerializedPayloads
                                             "countryCode": "US"
                                         }
                                     }
-                                    """;                                  
+                                    """;              
+    public const string CompanyFixtureOneTestSeven = """
+                                    { 
+                                        "name": "Test Six Company",
+                                        "type": "Simple",
+                                        "contacts": [
+                                            {
+                                            "firstName": "John",
+                                            "lastName": "Smith",
+                                            "age": 40,
+                                            "phoneNumbers": [
+                                                {
+                                                "type": "home",
+                                                "number": "213 525-1234"
+                                                },
+                                                {
+                                                "type": "fax",
+                                                "number": "646 525-4367"
+                                                }
+                                            ]
+                                            }
+                                        ],
+                                        "address": {
+                                            "streetAddress": "21 2nd Street",
+                                            "city": "New York",
+                                            "state": "NY",
+                                            "postalCode": "10021", 
+                                            "countryCode": "US"
+                                        },
+                                        "dateFounded": "1996-03-21T00:00:00+00:00"
+                                    }
+                                    """;                               
 }
