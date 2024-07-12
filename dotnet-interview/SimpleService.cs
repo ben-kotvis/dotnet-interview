@@ -6,12 +6,12 @@ public class SimpleService(ICompanyService companyService) : CompanyAbstractDeco
 {
     public override string GetStockSymbol()
     {
-        return this._companyService.GetStockSymbol();
+        return companyService.GetStockSymbol();
     }
 
     public override async Task<int> GetSurchargeInCents()
     {
-        return (await this._companyService.GetSurchargeInCents()) + 1000;
+        return (await companyService.GetSurchargeInCents()) + 1000;
     }
 
 }

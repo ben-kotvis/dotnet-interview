@@ -7,12 +7,12 @@ public class PubliclyTradedService(ICompanyService companyService) : CompanyAbst
 
     public override string GetStockSymbol()
     {
-        return this._companyService.GetStockSymbol();
+        return companyService.GetStockSymbol();
     }
 
     public override async Task<int> GetSurchargeInCents()
     {
-        return (await this._companyService.GetSurchargeInCents()) + 500;
+        return (await companyService.GetSurchargeInCents()) + 500;
     }
 
 }
